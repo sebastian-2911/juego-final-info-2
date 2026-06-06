@@ -121,25 +121,20 @@ private:
     float tiempoGiro;
 
 
-    // ── Animación Nivel 2 (sprite sheet Targeryan) ───────
-    // ANIM_TOTAL - 1 porque ANIM_SALTO es frame fijo aparte
-    // hoja de sprites nivel 2
-    // Rhaegar: 1533x972, 7 cols x 4 filas, celda 219x243
     static constexpr int SPRITE_COLS_RHAEGAR   = 7;
-    static constexpr int SPRITE_CELL_W_RHAEGAR = 219;
-    static constexpr int SPRITE_CELL_H_RHAEGAR = 243;
+    static constexpr int SPRITE_CELL_W_RHAEGAR = 191;
+    static constexpr int SPRITE_CELL_H_RHAEGAR = 222;
 
-    // Robert: 1536x1024, 8 cols x 4 filas, celda 192x256
     static constexpr int SPRITE_COLS_ROBERT    = 8;
-    static constexpr int SPRITE_CELL_W_ROBERT  = 192;
-    static constexpr int SPRITE_CELL_H_ROBERT  = 256;
+    static constexpr int SPRITE_CELL_W_ROBERT  = 175;
+    static constexpr int SPRITE_CELL_H_ROBERT  = 223;
 
     static constexpr int SPRITE_ANIM_ROWS = 4;
 
     // graficos rhaegar
     QPixmap spriteSheetRhaegar;
-    QPixmap framesRhaegar      [SPRITE_ANIM_ROWS][7];   // 7 cols
-    QPixmap framesRhaegarMirror[SPRITE_ANIM_ROWS][7];   // espejados
+    QPixmap framesRhaegar      [SPRITE_ANIM_ROWS][7];
+    QPixmap framesRhaegarMirror[SPRITE_ANIM_ROWS][7];
 
     QPixmap frameSaltoRhaegar;
     QPixmap frameSaltoRhaegarMirror;
@@ -147,8 +142,8 @@ private:
     // graficos robert
     QPixmap spriteSheetRobert;
 
-    QPixmap framesRobert         [SPRITE_ANIM_ROWS][8];   // 8 cols
-    QPixmap framesRobertMirror   [SPRITE_ANIM_ROWS][8];   // espejados
+    QPixmap framesRobert         [SPRITE_ANIM_ROWS][8];
+    QPixmap framesRobertMirror   [SPRITE_ANIM_ROWS][8];
 
     QPixmap frameSaltoRobert;
     QPixmap frameSaltoRobertMirror;
