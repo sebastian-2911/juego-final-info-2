@@ -114,7 +114,7 @@ void Nivel1::iniciar()
     contadorPatron = 0;
 
     // Cargar sonido de daño
-    sonidoDanio.setSource(QUrl::fromLocalFile("dano.wav"));
+    sonidoDanio.setSource(QUrl("qrc:/dano.wav"));;
     sonidoDanio.setVolume(0.8f);
 }
 
@@ -454,5 +454,3 @@ void Nivel1::dibujarTemporizador(QPainter& painter)
         painter.drawText(QRect(0, 62, 1024, 32), Qt::AlignCenter, "Choque");
     }
 }
-
-// ---------------------------------------------------------------

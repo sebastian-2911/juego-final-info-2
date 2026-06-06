@@ -23,11 +23,11 @@ public:
 
 private:
     TipoEstatico tipoEstatico;
-    QPixmap      sprite;
+    QPixmap sprite;
 
     // Tamaño de render en pantalla (px)
-    static constexpr int RENDER_W = 80;
-    static constexpr int RENDER_H = 80;
+    static constexpr int RENDER_W = 160;
+    static constexpr int RENDER_H = 160;
 };
 
 #endif // OBSTACULOESTATICO_H

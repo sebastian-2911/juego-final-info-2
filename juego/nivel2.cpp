@@ -2,14 +2,14 @@
 #include <QKeyEvent>
 #include <cmath>
 
-static const float VIDA_ROBERT  = 130.0f;
-static const float VIDA_RHAEGAR =  85.0f;
+static const float VIDA_ROBERT  = 100.0f;
+static const float VIDA_RHAEGAR =  100.0f;
 static const float INTERVALO_OLEADA_MIN = 3.0f;
 static const int   INTERVALO_OLEADA_VARIACION = 2;
 static const float VELOCIDAD_FLECHA_X_MAX = 160.0f;
 static const float VELOCIDAD_FLECHA_Y_MIN = 280.0f;
 static const int   VELOCIDAD_FLECHA_Y_VARIACION = 221;
-static const float INTERVALO_ESCUDO_BASE = 15.0f;
+static const float INTERVALO_ESCUDO_BASE = 5.0f;
 static const float INTERVALO_ESCUDO_EXTRA_VIDA_BAJA = 12.0f;
 
 struct HitRect {
@@ -67,9 +67,9 @@ Nivel2::Nivel2()
     velEmpuje1            = 0.0f;
     velEmpuje2            = 0.0f;
     bloqueando1           = false;
-    cooldownAtaque1       = 0.0f;
-    cooldownAtaque2       = 0.0f;
-    tiempoDecisionIA      = 0.0f;
+    cooldownAtaque1       = 10.0f;
+    cooldownAtaque2       = 10.0f;
+    tiempoDecisionIA      = 0.5f;
     timerPostAtaqueRobert = 0.0f; //transicion
     robertAcabaDeAtacar   = false;
     teclaDPresionada      = false;
@@ -111,9 +111,9 @@ void Nivel2::iniciar()
     velEmpuje1            = 0.0f;
     velEmpuje2            = 0.0f;
     bloqueando1           = false;
-    cooldownAtaque1       = 0.0f;
-    cooldownAtaque2       = 0.0f;
-    tiempoDecisionIA      = 0.0f;
+    cooldownAtaque1       = 10.0f;
+    cooldownAtaque2       = 10.0f;
+    tiempoDecisionIA      = 0.5f;
     timerPostAtaqueRobert = 0.0f;
     robertAcabaDeAtacar   = false;
     teclaDPresionada      = false;

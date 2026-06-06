@@ -70,8 +70,8 @@ private:
     static constexpr float FRICCION_EMPUJE      =   12.0f;
     static constexpr float UMBRAL_EMPUJE        =    8.0f;
     static constexpr float FUERZA_EMPUJE        = 2000.0f;
-    static constexpr float DANIO_ESCUDO         =   25.0f;
-    static constexpr float DANIO_VIDA           =   30.0f;
+    static constexpr float DANIO_ESCUDO         =   10.0f;
+    static constexpr float DANIO_VIDA           =   10.0f;
     static constexpr float DANIO_FLECHA         =   10.0f;
     static constexpr float COOLDOWN_ATAQUE      =   0.22f;
     static constexpr float HITBOX_W             =   56.0f;

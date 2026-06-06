@@ -8,9 +8,23 @@ ObstaculoEstatico::ObstaculoEstatico(float x, float yReal, TipoEstatico tipo)
     {
     case OBS_PIEDRA:
         sprite.load(":/piedra.png");
+
+        sprite = sprite.scaled(
+            RENDER_W,
+            RENDER_H,
+            Qt::IgnoreAspectRatio,
+            Qt::FastTransformation
+            );
         break;
     case OBS_CADAVER:
         sprite.load(":/cadaver.png");
+
+        sprite = sprite.scaled(
+            RENDER_W,
+            RENDER_H,
+            Qt::IgnoreAspectRatio,
+            Qt::FastTransformation
+            );
         break;
     }
 }
@@ -24,11 +38,11 @@ void ObstaculoEstatico::renderizar(QPainter& painter, float scrollMundo)
 {
     if (!estaActiva()) return;
 
-    int screenX = static_cast<int>(getXReal());
+    int screenX = static_cast<int>(getXReal()-70);
     int screenY = static_cast<int>(getYReal() + scrollMundo);
 
     if (!sprite.isNull())
-        painter.drawPixmap(screenX, screenY, RENDER_W, RENDER_H, sprite);
+        painter.drawPixmap(screenX, screenY, sprite);
     else
     {
         // Fallback: cubo de color según tipo, para errores

@@ -11,8 +11,8 @@ Jugador::Jugador(TipoJugador tipo)
     tiempoInvulnerable = 0.0f;
     hitbox             = {0.8f, 1.2f, 0.0f};
     posicion           = {0.0f, 0.0f, 0.0f};
-    vida               = 100.0f;
-    escudo             = 100.0f;
+    vida               = 150.0f;
+    escudo             = 150.0f;
     velMovX            = 0.0f;
     velY               = 0.0f;
     enSuelo            = true;
