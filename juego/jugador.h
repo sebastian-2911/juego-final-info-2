@@ -47,7 +47,7 @@ public:
 
     bool colisiona(Jugador* otro);
 
-    // ── Getters ─────────────────────────────────────────
+    // Getters
     float  getVida()      const;
     float  getEscudo()    const;
     float  getVelY()      const;
@@ -58,7 +58,7 @@ public:
     float& refVelY();
     bool&  refEnSuelo();
 
-    // ── Setters ─────────────────────────────────────────
+    // Setters
     void setVida(float valor);
     void setEscudo(float valor);
     void setVelY(float valor);
@@ -66,12 +66,12 @@ public:
     void usarMovimientoLibre(bool estado);
     void mirarHaciaDerecha(bool derecha);
 
-    // ── Control de animación (Nivel 2) ───────────────────
+    // Control de animación (Nivel 2)
     void            setEstadoAnimacion(EstadoAnimacion estado);
     EstadoAnimacion getEstadoAnimacion() const;
 
 private:
-    // ── Helpers ──────────────────────────────────────────
+    //  Helpers
     void cargarSpriteSheetNivel1();
     void cargarSpriteSheetRhaegar();
     void cargarSpriteSheetRobert();
@@ -82,7 +82,7 @@ private:
     bool usaSpriteTargeryan() const;
     bool usaSpriteRobert() const;
 
-    // ── Estado ───────────────────────────────────────────
+    // Estado
     TipoJugador     tipoJugador;
 
     int   carril;
@@ -98,10 +98,10 @@ private:
 
     Vector3 hitbox;
 
-    // ── Dirección de cara ────────────────────────────────
+    //  Dirección de cara
     bool mirandoDerecha;   // true = sprite normal, false = espejado
 
-    // ── Animación Nivel 1 ────────────────────────────────
+    // Animación Nivel 1
     static const int TOTAL_FRAMES_N1 = 3;
 
     QPixmap framesN1[TOTAL_FRAMES_N1];
@@ -152,7 +152,7 @@ private:
     int             frameActual;
     float           tiempoFrame;
 
-    // ── Constantes ───────────────────────────────────────
+    // Constantes
     static constexpr float DURACION_FRAME   = 0.14f;
     static constexpr float VEL_MOV          = 310.0f;
     static constexpr float FUERZA_SALTO     = -620.0f;

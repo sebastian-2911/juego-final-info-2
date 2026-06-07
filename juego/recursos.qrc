@@ -8,8 +8,6 @@
         <file>video nivel1.mp4</file>
         <file>menu-1.png</file>
         <file>pantalla de carga n1.png</file>
-        <file>pantalla de carga n2.png</file>
-        <file>carga entreniveles.png</file>
         <file>perdedor.png</file>
         <file>dano.wav</file>
         <file>cancion n2.wav</file>
@@ -18,8 +16,10 @@
         <file>spritesTargeryan.png</file>
         <file>spritesRobert.png</file>
         <file>soldado.png</file>
-        <file>rhaegar1.png</file>
         <file>cadaver.png</file>
         <file>piedra.png</file>
+        <file>pantalla de carga n2.png</file>
+        <file>carga entreniveles.png</file>
+        <file>rhaegar1.png</file>
     </qresource>
 </RCC>

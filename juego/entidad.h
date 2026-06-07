@@ -22,7 +22,7 @@ public:
     Entidad();
     virtual ~Entidad() {}
 
-    virtual void actualizar() = 0;
+    virtual void actualizar() = 0 ;
     virtual void renderizar(QPainter& painter) = 0;
 
     Vector3 getPosicion() const;

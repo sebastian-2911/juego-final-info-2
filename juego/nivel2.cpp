@@ -353,7 +353,7 @@ void Nivel2::actualizarIA()
     if (velEmpuje2 >  MAX_VEL_EMPUJE) velEmpuje2 =  MAX_VEL_EMPUJE;
     if (velEmpuje2 < -MAX_VEL_EMPUJE) velEmpuje2 = -MAX_VEL_EMPUJE;
 
-    // ── Sincronizar animación de la IA con su estado ────────
+    // Sincronizar animación de la IA con su estado
     // Solo cambiar si no está en medio de un golpe o ataque
     EstadoAnimacion animActual = jugador2->getEstadoAnimacion();
     bool animacionActiva = (animActual == ANIM_ATAQUE || animActual == ANIM_GOLPE);

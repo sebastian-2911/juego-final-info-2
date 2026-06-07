@@ -1,8 +1,8 @@
 #include "jugador.h"
 
-// ════════════════════════════════════════════════════════════
+
 //  Constructor
-// ════════════════════════════════════════════════════════════
+
 Jugador::Jugador(TipoJugador tipo)
 {
     tipoJugador        = tipo;
@@ -32,9 +32,9 @@ Jugador::Jugador(TipoJugador tipo)
         cargarSpriteSheetRobert();
 }
 
-// ════════════════════════════════════════════════════════════
+
 //  Carga de recursos
-// ════════════════════════════════════════════════════════════
+
 void Jugador::cargarSpriteSheetNivel1()
 {
     QPixmap sheet;
@@ -134,22 +134,21 @@ void Jugador::cargarSpriteSheetRobert()
     frameSaltoRobert       = framesRobert[0][3];
     frameSaltoRobertMirror = framesRobertMirror[0][3];
 }
-//════════════════════════════════════════════════════════════
+
 //  Actualización
-// ════════════════════════════════════════════════════════════
 
 void Jugador::actualizarNivel2(float dt)
 {
     if (!esJugadorNivel2()) return;
 
-    // ── Dirección: actualizar según velocidad horizontal ──
+    // Dirección: actualizar según velocidad horizontal
     if      (velMovX > 0.0f) mirandoDerecha = true;
     else if (velMovX < 0.0f) mirandoDerecha = false;
 
-    // ── Movimiento horizontal ──────────────────────────────
+    // Movimiento horizontal
     posicion.x += velMovX * dt;
 
-    // ── Gravedad / salto ───────────────────────────────────
+    // Gravedad / salto
     velY       += GRAVEDAD * dt;
     posicion.y += velY * dt;
 
@@ -164,8 +163,8 @@ void Jugador::actualizarNivel2(float dt)
         enSuelo = false;
     }
 
-    // ── Estado de animación automático ────────────────────
-    // Prioridad: salto > acciones activas > movimiento > idle
+    // Estado de animación automático
+    // Prioridad: salto > acciones activas > movimiento >
     if (!enSuelo)
     {
         estadoAnim = ANIM_SALTO;   // en el aire: frame fijo de salto
@@ -192,7 +191,7 @@ void Jugador::actualizarNivel2(float dt)
 
 }
 
-// ── Avance de frame (compartido) ──────────────────────────────
+//  Avance de frame (compartido)
 void Jugador::avanzarFrame(float dt)
 {
     // El estado ANIM_SALTO usa frame fijo, no animar
@@ -219,9 +218,6 @@ void Jugador::avanzarFrame(float dt)
     }
 }
 
-// ════════════════════════════════════════════════════════════
-//  Renderizado
-// ════════════════════════════════════════════════════════════
 void Jugador::renderizar(QPainter& painter)
 {
     if (tipoJugador == JUGADOR_NIVEL1)
@@ -297,10 +293,7 @@ void Jugador::renderizarNivel2Sprite(QPainter& painter)
                         : frameSaltoRobertMirror;
         }
     }
-
-    // ─────────────────────────────────────────────
     // Caminar / Ataque / Golpe / Bloqueo
-    // ─────────────────────────────────────────────
     else
     {
         int animIdx = static_cast<int>(estadoAnim);
@@ -340,9 +333,7 @@ void Jugador::renderizarNivel2Sprite(QPainter& painter)
     }
 }
 
-// ════════════════════════════════════════════════════════════
 //  Input y movimiento
-// ════════════════════════════════════════════════════════════
 void Jugador::procesarInput(char tecla)
 {
     if      (tecla == 'a' || tecla == 'A') moverIzquierda();
@@ -391,9 +382,8 @@ void Jugador::saltar()
     enSuelo = false;
 }
 
-// ════════════════════════════════════════════════════════════
+
 //  Colisión
-// ════════════════════════════════════════════════════════════
 bool Jugador::colisiona(Jugador* otro)
 {
     if (!otro) return false;
@@ -402,9 +392,8 @@ bool Jugador::colisiona(Jugador* otro)
     return r1.intersects(r2);
 }
 
-// ════════════════════════════════════════════════════════════
 //  Getters / Setters
-// ════════════════════════════════════════════════════════════
+
 float  Jugador::getVida()     const { return vida; }
 float  Jugador::getEscudo()   const { return escudo; }
 float  Jugador::getVelY()     const { return velY; }

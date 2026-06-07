@@ -78,7 +78,6 @@ Nivel1::~Nivel1()
     delete jefeFinal;
 }
 
-//
 void Nivel1::iniciar()
 {
     delete jugador;
@@ -124,7 +123,7 @@ void Nivel1::actualizar()
     if (!jugador)
         return;
 
-    // ---- Pantalla de fin: espera 1.5 s y transiciona ----
+    // Pantalla de fin: espera 1.5 s y transiciona
     if (finNivel)
     {
         tiempoFinNivel += dt;
@@ -136,11 +135,11 @@ void Nivel1::actualizar()
         return;
     }
 
-    // ---- Avanzar reloj ----
+    // Avanzar reloj
     tiempoJuego      += dt;
     tiempoGeneracion += dt;
 
-    // ---- Si el jugador esta bloqueado forzar carril central ----
+    // Si el jugador esta bloqueado forzar carril central
     if (jugadorBloqueadoCentro)
         jugador->setPosicion(carriles[1], 0.0f, 2.5f);
 
@@ -159,11 +158,11 @@ void Nivel1::actualizar()
     if (tiempoAlerta > 0.0f)
         tiempoAlerta -= dt;
 
-    // ---- Fase jefe: activa a los 50 s ----
+    //  Fase jefe: activa a los 50 s
     if (tiempoJuego >= FASE_JEFE && !jefeFinalActivo)
         activarJefeFinal();
 
-    // ---- Spawn de enemigos: solo antes de los 47 s ----
+    // Spawn de enemigos: solo antes de los 47 s
     if (!jefeFinalActivo
         && tiempoJuego < FASE_FIN_SPAWN
         && tiempoGeneracion >= intervaloActual)
@@ -178,7 +177,7 @@ void Nivel1::actualizar()
     if (!jefeFinalActivo)
         escalarDificultad(dt);
 
-    // ---- Colision con el jefe -> GANA (llego al jefe) ----
+    // Colision con el jefe GANA
     if (jefeFinalActivo && colisionFinal())
     {
         llegoAlFinal   = true;

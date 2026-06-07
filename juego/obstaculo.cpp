@@ -1,6 +1,6 @@
 #include "obstaculo.h"
 
-// ── constructor normal ────────────────────────────────────────────────────────
+// constructor normal
 Obstaculo::Obstaculo(float x, float posicionYReal)
 {
     posicion  = {x, 0.0f, 0.0f};
@@ -12,7 +12,7 @@ Obstaculo::Obstaculo(float x, float posicionYReal)
     vy_       = 0.0f;
 }
 
-// ── constructor flecha
+// constructor flecha
 Obstaculo::Obstaculo(float xPantalla, float yPantalla, float vx0, float vy0, bool esFlecha)
 {
     posicion  = {0.0f, 0.0f, 0.0f};
@@ -25,13 +25,13 @@ Obstaculo::Obstaculo(float xPantalla, float yPantalla, float vx0, float vy0, boo
     vy_       = vy0;
 }
 
-// ── actualizar  (obstáculo normal) ─
+//  actualizar  (obstáculo normal)
 void Obstaculo::actualizar()
 {
     // obstáculo estático: nada
 }
 
-// ── actualizar con(flecha: cinemática) ───────────────────────────────────
+// actualizar con(flecha: cinemática)
 void Obstaculo::actualizar(float dt)
 {
     if (!activa) return;
